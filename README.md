@@ -11,6 +11,7 @@ npm i -D hermione-test-sequencer
 ## Usage
 
 Set options for the plugin in your hermione config:
+
 ```js
 plugins: {
     'hermione-test-sequencer': {
