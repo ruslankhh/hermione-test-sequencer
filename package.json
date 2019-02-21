@@ -1,7 +1,7 @@
 {
-  "name": "hermione-test-filter",
-  "version": "0.3.2",
-  "description": "plugin for filtering tests specified in json-file",
+  "name": "hermione-test-sequencer",
+  "version": "0.1.0",
+  "description": "Hermione plugin for running tests in the specified order in one session.",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gemini-testing/hermione-test-filter.git"
+    "url": "git://github.com/gemini-testing/hermione-test-sequencer.git"
   },
   "keywords": [
     "hermione",
     "plugin"
   ],
-  "author": "Rostislav Shtanko <rostik404@yandex-team.ru>",
+  "author": "Ruslan Khusnetdinov <ruslankhh@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",

@@ -4,7 +4,7 @@ const {AsyncEmitter} = require('gemini-core').events;
 const utils = require('../lib/utils');
 const plugin = require('../lib');
 
-describe('test filter', () => {
+describe('test sequencer', () => {
     const sandbox = sinon.createSandbox();
 
     const mkHermioneStub = (opts = {}) => {
