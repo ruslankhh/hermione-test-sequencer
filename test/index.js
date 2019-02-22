@@ -16,6 +16,10 @@ describe('test sequencer', () => {
         };
 
         hermione.isWorker = () => opts.isWorker;
+        hermione.config = {
+            getBrowserIds: () => ['some-browser'],
+            forBrowser: () => ({})
+        };
 
         return hermione;
     };
@@ -23,12 +27,14 @@ describe('test sequencer', () => {
     const mkTestCollectionStub = () => {
         return {
             disableAll: sandbox.stub(),
-            enableTest: sandbox.stub()
+            sortTests: sandbox.stub(),
+            enableTest: sandbox.stub(),
+            getBrowsers: () => ['some-browser']
         };
     };
 
     const initHermione = async (hermione, opts = {}) => {
-        plugin(hermione, {enabled: true, ...opts});
+        plugin(hermione, {enabled: true, filterTests: true, ...opts});
 
         await hermione.emitAndWait(hermione.events.INIT);
     };
@@ -46,7 +52,7 @@ describe('test sequencer', () => {
             sandbox.spy(hermione, 'on');
             await initHermione(hermione, {inputFile: 'some/file.json'});
 
-            assert.notCalled(hermione.on);
+            assert.calledOnce(hermione.on);
         });
     });
 

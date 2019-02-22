@@ -15,7 +15,8 @@ Set options for the plugin in your hermione config:
 ```js
 plugins: {
     'hermione-test-sequencer': {
-        enabled: true,
+        enabled: false,
+        filterTests: true,
         inputFile: 'some/file.json'
     }
 }
@@ -31,11 +32,18 @@ Input file format:
 ]
 ```
 
+Run hermione with cli option (if `enabled: false`):
+
+```
+npx hermione --seq
+```
+
 ## Options
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | `enabled` | `[Boolean]` | `false` | Enable/disable the plugin. |
+| `filterTests` | `[Boolean]` | `true` | Filter and disable other tests. |
 | `inputFile` | `[String]` | `hermione-sequencer.json` | Path to file with tests to run. |
 
 
