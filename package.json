@@ -1,6 +1,6 @@
 {
   "name": "hermione-test-sequencer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Hermione plugin for running tests in the specified order in one session.",
   "main": "lib/index.js",
   "scripts": {
