@@ -16,6 +16,10 @@ describe('test sequencer', () => {
         };
 
         hermione.isWorker = () => opts.isWorker;
+        hermione.config = {
+            getBrowserIds: () => ['some-browser'],
+            forBrowser: () => ({})
+        };
 
         return hermione;
     };
